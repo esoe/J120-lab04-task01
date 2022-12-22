@@ -64,6 +64,7 @@ public class SimpleEditor extends JFrame{
         createMenu();
         setVisible(true);
     }
+
     /**
      * Стартовый метод приложения.
      * @paramargs параметры командной строки.
@@ -71,13 +72,22 @@ public class SimpleEditor extends JFrame{
     public static void main(String[] args) {
         SimpleEditor simpleEditor = new SimpleEditor();
     }
+
     /**
      * Метод инициализирует обработчик событий listener, создаёт и настраивает
      * все элементы пользовательского интерфейса.
      */
     private void init() {
+        //настройки фрейма
+        setSize(800, 600);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        //инициируем панель контента, для размещения элементов графического интерфейса
+        cp = getContentPane();
+        // инициируем слушатель событий
+        listener = new SimpleEditorListener(this);
         // Реализация метода
     }
+
     /**
      * Метод полностью создаёт главное меню приложения и добавляет его в главное
      * окно приложения.
@@ -85,6 +95,7 @@ public class SimpleEditor extends JFrame{
     private void createMenu() {
         // Реализация метода
     }
+
     /**
      * Метод обеспечивает добавление или замену текста в окне редактирования.
      * @paramstr добавляемый текст.
@@ -95,6 +106,7 @@ public class SimpleEditor extends JFrame{
     void appendText(String str, boolean append) {
         // Реализация метода
     }
+
     /**
      * Метод возвращает весь текст, содержащийся в окне редактирования.
      * @return текст из окна редактирования.
