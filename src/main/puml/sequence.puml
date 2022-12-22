@@ -1,0 +1,5 @@
+@startuml
+title "Logic: Editor"
+participant "Пользователь" as user
+participant "Хранилище" as storage
+@enduml

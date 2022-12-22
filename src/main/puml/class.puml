@@ -1,0 +1,7 @@
+@startuml
+title "Classes to program: editor"
+/'Программа реализует основной функционал Текстового редактора'/
+class Runner /'Запускает программу на выполнение'/
+class SwingFace /'Реализация графического интерфейса'/
+class ConsoleFace /'Реализация консольного интерфейса'/
+@enduml

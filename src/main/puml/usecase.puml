@@ -1,0 +1,7 @@
+@startuml
+title "Usecase: Scripting"
+left to right direction
+actor "Пользователь" as user
+usecase "Редактор" as program
+user -> program : "Путь к файлу/ директории"
+@enduml
