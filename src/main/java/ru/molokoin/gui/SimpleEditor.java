@@ -58,7 +58,7 @@ public class SimpleEditor extends JFrame{
     /**
      * Конструктор приложения.
      */
-    protected SimpleEditor() {
+    public SimpleEditor() {
         setTitle("Simple text editor");
         init();
         createMenu();
@@ -86,6 +86,8 @@ public class SimpleEditor extends JFrame{
         // инициируем слушатель событий
         listener = new SimpleEditorListener(this);
         // Реализация метода
+        text = new JTextArea();
+        cp.add(text);
     }
 
     /**
@@ -94,6 +96,21 @@ public class SimpleEditor extends JFrame{
      */
     private void createMenu() {
         // Реализация метода
+        bar = new JMenuBar();
+        menu = new JMenu[]{new JMenu("File"), new JMenu("Edit")};
+        commandMenu = new JMenuItem[]{new JMenuItem("Open"), new JMenuItem("Save"), new JMenuItem("Cancel"), new JMenuItem("Exit")};
+        //добавляем команды в меню "File"
+        for (int i=0; i < 4; i++){
+            commandMenu[i].addActionListener(listener);
+            menu[0].add(commandMenu[i]);
+        }
+        //добавляем менюшки в основное меню
+        for (int i=0; i < 2; i++){
+            bar.add(menu[i]);
+        }
+        //установили главное меню редактора
+        setJMenuBar(bar);
+        
     }
 
     /**
@@ -114,6 +131,10 @@ public class SimpleEditor extends JFrame{
     String getText() {
         // Реализация метода
         return null;
+    }
+    
+    public JTextArea getTextArea(){
+        return text;
     }
 
 
